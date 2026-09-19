@@ -23,42 +23,55 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="bg-[#07152F] py-28 text-white">
-      <div className="container grid gap-16 lg:grid-cols-[.7fr_1.3fr]">
+    <section
+      id="faq"
+      className="bg-[#07152F] py-14 text-white sm:py-20 lg:py-28"
+    >
+      <div className="container grid gap-8 sm:gap-12 lg:grid-cols-[.7fr_1.3fr] lg:gap-16">
+        {/* FAQ INTRO */}
         <div>
-          <p className="eyebrow text-blue-300">06 / FAQ</p>
+          <p className="eyebrow text-blue-300">
+            06 / FAQ
+          </p>
 
-          <h2 className="display-title mt-6 text-5xl font-black sm:text-6xl">
+          <h2 className="display-title mt-4 text-[2.7rem] font-black sm:mt-6 sm:text-6xl">
             GOT
-            <span className="block text-blue-300">QUESTIONS?</span>
+            <span className="block text-blue-300">
+              QUESTIONS?
+            </span>
           </h2>
 
-          <p className="mt-7 max-w-sm leading-7 text-slate-400">
+          <p className="mt-4 max-w-sm text-sm leading-6 text-slate-400 sm:mt-7 sm:text-base sm:leading-7">
             A few quick answers before you get started with Central Therapy.
           </p>
         </div>
 
+        {/* FAQ ITEMS */}
         <div className="border-t border-white/10">
           {faqs.map(([question, answer], index) => (
             <details
               key={question}
-              className="group border-b border-white/10 py-7"
+              className="group border-b border-white/10 py-4 sm:py-7"
             >
-              <summary className="flex cursor-pointer list-none items-center gap-5">
-                <span className="text-xs font-black text-blue-400">
+              <summary className="flex cursor-pointer list-none items-center gap-3 sm:gap-5">
+                {/* Number */}
+                <span className="text-[0.65rem] font-black text-blue-400 sm:text-xs">
                   0{index + 1}
                 </span>
 
-                <span className="flex-1 text-lg font-black text-white sm:text-xl">
+                {/* Question */}
+                <span className="flex-1 text-sm font-black leading-5 text-white sm:text-xl sm:leading-normal">
                   {question}
                 </span>
 
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-xl text-white transition group-open:rotate-45">
+                {/* Open / close */}
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-base text-white transition group-open:rotate-45 sm:h-10 sm:w-10 sm:text-xl">
                   +
                 </span>
               </summary>
 
-              <p className="max-w-2xl pl-10 pt-5 leading-7 text-slate-400">
+              {/* Answer */}
+              <p className="max-w-2xl pl-7 pr-2 pt-3 text-sm leading-6 text-slate-400 sm:pl-10 sm:pt-5 sm:text-base sm:leading-7">
                 {answer}
               </p>
             </details>
